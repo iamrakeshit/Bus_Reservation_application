@@ -1,23 +1,17 @@
-package com.reservationapp.entity;
+package com.reservationapp.payload;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Lob;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "user_registration")
-public class UserRegistration {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UserRegistrationDto {
     private long id;
     private String name;
     private String email;
     private String password;
-    @Lob
-    @Column(length = 1024) // Adjust the length as needed
     private byte[] profilePicture;
 }
