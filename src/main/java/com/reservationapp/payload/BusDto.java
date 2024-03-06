@@ -1,5 +1,6 @@
 package com.reservationapp.payload;
 
+import com.reservationapp.entity.Driver;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,17 +12,17 @@ import java.util.Date;
 @NoArgsConstructor
 public class BusDto {
     private Long busId;
-    @Column(name="bus_number", unique = true)
     private String busNumber;
     private String busType;
-    private String from;
-    private String to;
-    private Date fromDate; // Changed to Date type
-    private Date toDate;   // Changed to Date type
-    private int totalDuration;
+    private String fromLocation;
+    private String toLocation;
+    private String fromDate;
+    private String toDate;
+    private String totalDuration;
     private String fromTime;
     private String toTime;
     private double price;
     private int totalSeats;
     private int availableSeats;
+    private Driver driver;
 }
